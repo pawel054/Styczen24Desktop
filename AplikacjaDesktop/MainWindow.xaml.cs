@@ -17,6 +17,7 @@ namespace AplikacjaDesktop
     /// </summary>
     public partial class MainWindow : Window
     {
+        string eyesColor = "niebieskie";
         public MainWindow()
         {
             InitializeComponent();
@@ -30,6 +31,24 @@ namespace AplikacjaDesktop
                 imgFingerPrint.Source = new BitmapImage(new Uri($"pack://application:,,,/AplikacjaDesktop;component/Images/{txtNumber.Text}-odcisk.jpg"));
             }
             catch{}
+        }
+
+        private void OkClick(object sender, RoutedEventArgs e)
+        {
+            if(!string.IsNullOrEmpty(txtName.Text) && !string.IsNullOrEmpty(txtSurname.Text) && !string.IsNullOrEmpty(txtNumber.Text))
+            {
+                MessageBox.Show($"{txtName.Text} {txtSurname.Text} kolor oczu {eyesColor}");
+            }
+            else if(string.IsNullOrEmpty(txtName.Text) || string.IsNullOrEmpty(txtSurname.Text))
+            {
+                MessageBox.Show("Wprowadź dane");
+            }
+        }
+
+        private void ChooseEyeColor(object sender, RoutedEventArgs e)
+        {
+            RadioButton radioButton = sender as RadioButton;
+            eyesColor = radioButton.Content.ToString();
         }
     }
 }

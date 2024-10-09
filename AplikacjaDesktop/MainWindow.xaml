@@ -34,9 +34,9 @@
         </Grid>
         <GroupBox Header="Kolor oczu" Grid.Row="1" Grid.Column="0" Margin="20,0,20,30">
             <StackPanel Margin="15">
-                <RadioButton Content="niebieskie" Margin="0,0,0,10"/>
-                <RadioButton Content="zielone" Margin="0,0,0,10"/>
-                <RadioButton Content="piwne"/>
+                <RadioButton Content="niebieskie" Margin="0,0,0,10" GroupName="Oczy" IsChecked="True" Checked="ChooseEyeColor"/>
+                <RadioButton Content="zielone" Margin="0,0,0,10" GroupName="Oczy" Checked="ChooseEyeColor"/>
+                <RadioButton Content="piwne" GroupName="Oczy" Checked="ChooseEyeColor"/>
             </StackPanel>
         </GroupBox>
         <StackPanel Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" Margin="20,30,20,0">
@@ -44,7 +44,7 @@
                 <Image x:Name="imgPerson" Source="Images/000-zdjecie.jpg" Width="180" Margin="0,0,40,0"/>
                 <Image x:Name="imgFingerPrint" Source="Images/000-odcisk.jpg" Width="140"/>
             </StackPanel>
-            <Button Content="OK" Background="Azure" Padding="7" HorizontalAlignment="Center" Width="250" Margin="0,20,0,0"/>
+            <Button Content="OK" Background="Azure" Padding="7" HorizontalAlignment="Center" Width="250" Margin="0,20,0,0" Click="OkClick"/>
         </StackPanel>
     </Grid> 
 </Window>
