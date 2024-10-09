@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.IO;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -19,6 +20,16 @@ namespace AplikacjaDesktop
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void UpdateImages(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                imgPerson.Source = new BitmapImage(new Uri($"pack://application:,,,/AplikacjaDesktop;component/Images/{txtNumber.Text}-zdjecie.jpg"));
+                imgFingerPrint.Source = new BitmapImage(new Uri($"pack://application:,,,/AplikacjaDesktop;component/Images/{txtNumber.Text}-odcisk.jpg"));
+            }
+            catch{}
         }
     }
 }

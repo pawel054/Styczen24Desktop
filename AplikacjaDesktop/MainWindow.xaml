@@ -26,7 +26,7 @@
                 <RowDefinition Height="auto"/>
             </Grid.RowDefinitions>
             <Label Content="Numer" Grid.Column="0" Grid.Row="0" VerticalAlignment="Center"/>
-            <TextBox x:Name="txtNumber" Grid.Column="1" Grid.Row="0" VerticalAlignment="Center" Background="Azure"/>
+            <TextBox x:Name="txtNumber" Grid.Column="1" Grid.Row="0" VerticalAlignment="Center" Background="Azure" LostFocus="UpdateImages"/>
             <Label Content="Imię" Grid.Column="0" Grid.Row="1" VerticalAlignment="Center"/>
             <TextBox x:Name="txtName" Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" Background="Azure"/>
             <Label Content="Nazwisko" Grid.Column="0" Grid.Row="2" VerticalAlignment="Center"/>
@@ -41,8 +41,8 @@
         </GroupBox>
         <StackPanel Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" Margin="20,30,20,0">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <Image Source="Images/000-zdjecie.jpg" Width="180" Margin="0,0,40,0"/>
-                <Image Source="Images/000-odcisk.jpg" Width="140"/>
+                <Image x:Name="imgPerson" Source="Images/000-zdjecie.jpg" Width="180" Margin="0,0,40,0"/>
+                <Image x:Name="imgFingerPrint" Source="Images/000-odcisk.jpg" Width="140"/>
             </StackPanel>
             <Button Content="OK" Background="Azure" Padding="7" HorizontalAlignment="Center" Width="250" Margin="0,20,0,0"/>
         </StackPanel>
